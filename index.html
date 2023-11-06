@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nospa</title>
+    <title>Nospa Melissa x20</title>
     <style>
         @charset "UTF-8";
 @font-face 
@@ -14,6 +14,10 @@ src: url("./fonts/Montserrat-Regular.ttf") format("truetype");
 @font-face {
 font-family: "MontserratBold";
 src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CarnasBlack";
+  src: url("./fonts/Carnas-Black.otf") format("opentype");
 }
 
 #es-sanofi.es-sanofi {
@@ -223,8 +227,10 @@ src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
   position: absolute;
   top: 5px;
   left: 16px;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
+  -webkit-animation: es-pulse-3 2s infinite;
+        animation: es-pulse-3 2s infinite;
 }
 
 #es-sanofi.es-sanofi .es-treatment__txt--span {
@@ -247,6 +253,17 @@ src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
   font-size: 14px;
   text-align: left;
   padding-left: 48px;
+}
+
+#es-sanofi.es-sanofi .es-treatment__subtitle::before {
+  content: url(./img/dot.webp);
+  position: absolute;
+  top: 19px;
+  left: 15px;
+  width: 26px;
+  height: 26px;
+  -webkit-animation: es-pulse-4 2s infinite;
+        animation: es-pulse-4 2s infinite;
 }
 
 #es-sanofi.es-sanofi .es-treatment__img {
@@ -380,14 +397,15 @@ src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
   padding: 0;
   line-height: inherit;
   color: #000;
-  font-family: "MontserratBold", sans-serif;
+  font-family: "CarnasBlack", sans-serif;
   font-size: 16px;
   position: absolute;
-  top: 40%;
-  left: 11%;
+  top: 41%;
+  right: 27%;
+  letter-spacing: 1px;
   opacity: 0;
   transition: all 1s ease-in;
-  transition-delay: 1000ms;
+  transition-delay: 1500ms;
 }
 
 #es-sanofi.es-sanofi .es-effect__nameAppear {
@@ -871,14 +889,15 @@ src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
   #es-sanofi.es-sanofi .es-cross__title {
     max-width: 404px;
   }
+  #es-sanofi.es-sanofi .es-effect__name {
+    font-size: 20px;
+    right: 30%;
+  }
 }
 
 @media (min-width: 444px) {
   #es-sanofi.es-sanofi .es-kv__title {
     font-size: 28px;
-  }
-  #es-sanofi.es-sanofi .es-effect__name {
-    font-size: 20px;
   }
   #es-sanofi.es-sanofi .es-benefits__pic {
     height: 170px;
@@ -958,8 +977,9 @@ src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
     max-width: 660px;
   }
   #es-sanofi.es-sanofi .es-effect__name {
-    font-size: 28px;
-    left: 22%;
+    font-size: 32px;
+    right: 33%;
+    top: 37%;
   }
   #es-sanofi.es-sanofi .es-package__title {
     font-size: 28px;
@@ -1071,11 +1091,14 @@ src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
   left: 18px;
 }
 #es-sanofi.es-sanofi .es-treatment__subtitle {
-  max-width: 400px;
+  max-width: 440px;
   margin-left: 12px;
   font-weight: 400;
   text-align: left;
   font-size: 18px;
+}
+#es-sanofi.es-sanofi .es-treatment__subtitle::before {
+  top: 13px;
 }
 #es-sanofi.es-sanofi .es-treatment__img--desktop {
   display: block;
@@ -1090,8 +1113,8 @@ src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
   display: none;
 }
 #es-sanofi.es-sanofi .es-treatment__img--packshot {
-  top: 410px;
-  right: 0;
+  top: 415px;
+  right: 15px;
   z-index: 10;
   width: 365px;
 }
@@ -1322,6 +1345,76 @@ src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
   }
   to {
     transform: scale(1);
+  }
+}
+
+@-webkit-keyframes es-pulse-3 {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(89, 25, 129);
+    border-radius: 50%;
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(255, 26, 67, 0);
+    border-radius: 50%;
+  }
+  to {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 206, 67, 0);
+    border-radius: 50%;
+  }
+}
+@keyframes es-pulse-3 {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(89, 25, 129);
+    border-radius: 50%;
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(255, 26, 67, 0);
+    border-radius: 50%;
+  }
+  to {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 206, 67, 0);
+    border-radius: 50%;
+  }
+}
+
+@-webkit-keyframes es-pulse-4 {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+    border-radius: 50%;
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(255, 26, 67, 0);
+    border-radius: 50%;
+  }
+  to {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 206, 67, 0);
+    border-radius: 50%;
+  }
+}
+@keyframes es-pulse-4 {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+    border-radius: 50%;
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(255, 26, 67, 0);
+    border-radius: 50%;
+  }
+  to {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 206, 67, 0);
+    border-radius: 50%;
   }
 }
     </style>
